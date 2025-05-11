@@ -61,6 +61,7 @@
                 <th>Ubicación</th>
                 <th>Estado</th>
                 <th>Asistentes</th>
+                <!--<th>Acciones</th>-->
             </tr>
         </thead>
         <tbody>
@@ -74,6 +75,7 @@
                     <td>{{ $event->ubicacion }}</td>
                     <td>{{ $event->estado }}</td>
                     <td>{{ $event->asistentes }}</td>
+                    <!--<td><a href={{route ('editar',$event->id)}}><button type="button">Editar</button></a></td>-->
                 </tr>
             @endforeach
         </tbody>

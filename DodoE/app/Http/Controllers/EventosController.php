@@ -30,8 +30,19 @@ class EventosController extends Controller
     {
         return view('eliminar');
     }
-    public function editar()
+    public function editar($id)
     {
-        return view('editar');
+       #$events = ModelEventos::findOrFail($id);
+        #$organizadores = ModelUsuarios::all();
+        #return view('editar', compact('events', 'organizadores'));
     }
+    public function actualizar(Request $request, $id)
+    {
+        #$event = ModelEventos::findOrFail($id);
+        #$event->nombre_evento = $request->input('nombre_evento');
+        #$event->descripcion = $request->input('descripcion');
+        #$event->fk_usuario = $request->input('fk_usuario');
+        #$event->save();
+        #return redirect()->route('index');
+}
 }
