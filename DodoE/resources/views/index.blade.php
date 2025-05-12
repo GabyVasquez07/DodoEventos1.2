@@ -76,12 +76,12 @@
                     <td>{{ $event->estado }}</td>
                     <td>{{ $event->asistentes }}</td>
                     <<td><a href="{{route('editar',$event->id)}}"><button type="button">Editar</button></a></td>
-                    <td>
+                    <!--<td>
                         <form action="{{route('borrar', $event->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Borrar</button>
-                    </td>
+                    </td>-->
                 </tr>
             @endforeach
         </tbody>
