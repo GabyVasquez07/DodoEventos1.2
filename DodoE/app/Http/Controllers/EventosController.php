@@ -45,4 +45,10 @@ class EventosController extends Controller
         #$event->save();
         #return redirect()->route('index');
 }
+    public function borrar($id)
+    {
+        #$event = ModelEventos::findOrFail($id);
+        #$event->delete();
+        #return redirect()->route('index');
+    }
 }
