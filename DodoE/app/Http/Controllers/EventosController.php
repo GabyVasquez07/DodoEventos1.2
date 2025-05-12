@@ -32,18 +32,26 @@ class EventosController extends Controller
     }
     public function editar($id)
     {
-       #$events = ModelEventos::findOrFail($id);
-        #$organizadores = ModelUsuarios::all();
-        #return view('editar', compact('events', 'organizadores'));
+        $evento = ModelEventos::findOrFail($id);
+        $organizadores = ModelUsuarios::all();
+        return view('editar', compact('evento', 'organizadores'));
     }
     public function actualizar(Request $request, $id)
-    {
-        #$event = ModelEventos::findOrFail($id);
-        #$event->nombre_evento = $request->input('nombre_evento');
-        #$event->descripcion = $request->input('descripcion');
-        #$event->fk_usuario = $request->input('fk_usuario');
-        #$event->save();
-        #return redirect()->route('index');
+{
+    $event = ModelEventos::findOrFail($id);
+
+    $event->fk_usuario = $request->fk_usuario;
+    $event->nombre_evento = $request->nombre_evento;
+    $event->descripcion = $request->descripcion;
+    $event->fecha_evento = $request->fecha_evento;
+    $event->hora_evento = $request->hora_evento;
+    $event->ubicacion = $request->ubicacion;
+    $event->estado = $request->estado;
+    $event->asistentes = $request->asistentes;
+
+    $event->save();
+
+    return redirect()->route('index')->with('success', 'Evento actualizado correctamente');
 }
     public function borrar($id)
     {

@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [EventosController::class, 'index'])->name('index');
 Route::get('/crear', [EventosController::class, 'crear'])->name('crear');
 Route::post('/crear', [EventosController::class, 'guardar'])->name('guardar');
-#Route::get('/editar/{id}', [EventosController::class, 'editar'])->name('editar');
-#Route::put('/editar/{id}', [EventosController::class, 'actualizar'])->name('actualizar');
-#Route::delete('/borrar/{id}', [EventosController::class, 'borrar'])->name('borrar');
-#Route::get('/', function () {    return view('index');}); Este ya viene comentado XD de seguro ya sabes pero ajá
+Route::get('/editar/{id}', [EventosController::class, 'editar'])->name('editar');
+Route::put('/editar/{id}', [EventosController::class, 'actualizar'])->name('actualizar');
+Route::delete('/borrar/{id}', [EventosController::class, 'borrar'])->name('borrar');
+
