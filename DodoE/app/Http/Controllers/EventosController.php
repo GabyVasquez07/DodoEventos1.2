@@ -9,10 +9,16 @@ use App\Models\ModelUsuarios;
 
 class EventosController extends Controller
 {
-    public function index()
+  public function index()
+{
+    return view('index');
+}
+    
+    
+    public function indexEventos()
     {
         $events = ModelEventos::with("Eventos")->get();
-        return view('index',compact('events'));
+        return view('indexEventos', compact('events'));
     }
 
     public function crear()
@@ -24,7 +30,7 @@ class EventosController extends Controller
     public function guardar(Request $request)
     {
         ModelEventos::create($request->all());
-        return redirect()->route('index');
+        return redirect()->route('indexEventos');
     }
     public function eliminar()
     {
@@ -51,7 +57,7 @@ class EventosController extends Controller
 
     $event->save();
 
-    return redirect()->route('index')->with('success', 'Evento actualizado correctamente');
+    return redirect()->route('indexEventos')->with('success', 'Evento actualizado correctamente');
 }
     public function borrar($id)
     {

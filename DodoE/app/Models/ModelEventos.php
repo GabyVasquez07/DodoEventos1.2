@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelEventos extends Model
 {
-     protected $table = 'tbleventos';
+    protected $table = 'tbleventos';
     protected $fillable = [
         'fk_usuario',
         'nombre_evento',

@@ -5,7 +5,9 @@ use App\Http\Controllers\EventosController;
 use App\Http\Controllers\UserController;
 
 
+
 Route::get('/', [EventosController::class, 'index'])->name('index');
+Route::get('/eventos', [EventosController::class, 'indexEventos'])->name('indexEventos');
 Route::get('/crear', [EventosController::class, 'crear'])->name('crear');
 Route::post('/crear', [EventosController::class, 'guardar'])->name('guardar');
 Route::get('/editar/{id}', [EventosController::class, 'editar'])->name('editar');
