@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventosController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 
 
-
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/', [EventosController::class, 'index'])->name('index');
 Route::get('/eventos', [EventosController::class, 'indexEventos'])->name('indexEventos');
 Route::get('/crear', [EventosController::class, 'crear'])->name('crear');
