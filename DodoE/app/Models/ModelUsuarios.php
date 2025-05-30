@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class ModelUsuarios extends Model
+class ModelUsuarios extends Authenticatable
 {
+    use Notifiable;
+
     protected $table = 'tblusuarios';
+
     protected $fillable = [
         'nombre',
         'email',
@@ -14,9 +18,19 @@ class ModelUsuarios extends Model
         'rol',
     ];
 
+    protected $hidden = [
+        'contraseña',
+        'remember_token',
+    ];
+
+    // Laravel espera el campo 'password', así que sobrescribimos este método
+    public function getAuthPassword()
+    {
+        return $this->contraseña;
+    }
+
     public function Eventos()
     {
         return $this->hasMany(ModelEventos::class);
     }
-   
 }
