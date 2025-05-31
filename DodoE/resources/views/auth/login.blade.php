@@ -2,21 +2,25 @@
 <html>
 <head>
     <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{{ asset('estilos.css') }}">
+
 </head>
 <body>
-    <h1>Iniciar Sesión</h1>
-    <form method="POST" action="{{ route('login') }}">
+<div class="contenedor-login">
+    <form method="POST" action="{{ route('login') }}" class="formulario">
+        <h1 style="color: white;">Iniciar Sesión</h1>
         @csrf
-        <div>
+        <div class="grupo-f">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="{{ old('email') }}" required autofocus>
+            <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control" required autofocus>
         </div>
-        <div>
+        <div class="grupo-f">
             <label for="contraseña">Contraseña</label>
-            <input type="password" name="contraseña" id="contraseña" required>
+            <input type="password" name="contraseña" id="contraseña"  class="form-control" required>
         </div>
-        <button type="submit">Entrar</button>
+        <button type="submit" class="btn">Entrar</button>
     </form>
+</div>
     @if ($errors->any())
         <div>
             <ul>
