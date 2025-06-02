@@ -14,7 +14,7 @@
       object-fit: cover;
     }
     body {
-      background-color: #569baa;
+      background-color: white;
     }
 </style>
 </head>
@@ -116,7 +116,7 @@
 
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#eventosCarrusel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
+      <span style="color:blue;" class="carousel-control-prev-icon"></span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#eventosCarrusel" data-bs-slide="next">
       <span class="carousel-control-next-icon"></span>

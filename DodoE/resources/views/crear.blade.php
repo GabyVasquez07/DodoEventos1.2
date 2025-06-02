@@ -42,6 +42,7 @@
 <body>
     <h1>Bienvenido a DodoEventos</h1>
     <h2>Administrar y crear Evento</h2>
+    <div class="contenedor">
     <form action="{{ route('guardar') }}" method="POST">
         @csrf
         <label for="org">Organizador:</label>
@@ -75,6 +76,6 @@
         <input type="number" name="asistentes" required><br><br>
         <a href="{{route ('index')}}"><button type="submit">Crear Evento</button></a>
     </form>
-    
+</div>
 </body>
 </html>
