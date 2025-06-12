@@ -20,6 +20,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'destroy'])->middleware('auth')->name('logout');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/ver', function () {
+        return view('ver');
+    })->name('ver');
     Route::get('/eventos', [EventosController::class, 'indexEventos'])->name('indexEventos');
     Route::get('/crear', [EventosController::class, 'crear'])->name('crear');
     Route::post('/crear', [EventosController::class, 'guardar'])->name('guardar');

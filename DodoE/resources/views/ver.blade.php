@@ -126,7 +126,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="{{ route('indexEventos') }}" class="btn btn-primary btn-lg link">Ver todos los eventos</a>
+            <a href="{{ route('crear') }}" class="btn btn-primary btn-lg link">Solicitar Evento</a>
         </div>
     </div>
 

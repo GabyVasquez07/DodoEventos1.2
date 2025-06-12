@@ -20,10 +20,15 @@ class LoginController extends Controller
             'contraseña' => ['required'],
         ]);
 
-        // Usar el campo 'contraseña' en vez de 'password'
         if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['contraseña']])) {
             $request->session()->regenerate();
-            return redirect()->intended(route('index'));
+
+            // Verifica el rol del usuario autenticado
+            if (auth()->user()->rol === 'usuario') {
+                return redirect()->route('ver');
+            } else {
+                return redirect()->intended(route('index'));
+            }
         }
 
         return back()->withErrors([

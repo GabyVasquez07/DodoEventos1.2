@@ -33,6 +33,9 @@
         <div class="grupo-f">
             <label for="contraseña">Contraseña</label>
             <input type="password" class="form-control" name="contraseña" id="contraseña">
+            @error('contraseña')
+                <div style="color: red;">{{ $message }}</div>
+            @enderror
         </div>
         <div class="grupo-f">
             <label for="contraseña_confirmation">Confirmar Contraseña</label>
@@ -43,7 +46,7 @@
             <select name="rol" class="form-control" id="rol">
                 <option value="">Selecciona un rol</option>
                 <option value="admin" {{ old('rol') == 'admin' ? 'selected' : '' }}>Admin</option>
-                <option " value="usuario" {{ old('rol') == 'usuario' ? 'selected' : '' }}>Usuario</option>
+                <option value="usuario" {{ old('rol') == 'usuario' ? 'selected' : '' }}>Usuario</option>
             </select>
         </div><br>
         <div>
