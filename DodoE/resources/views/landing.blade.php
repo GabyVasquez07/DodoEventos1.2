@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1 class="titulo">Bienvenido a DodoEventos</h1>
-    <a class="link" href="{{ route('login') }}">Iniciar Sesión</a> |
-    <a class="link" href="{{ route('register') }}">Registrarse</a>
+     @if (Route::has('login'))
+       @auth
+       <a class="link" href="{{ route('dashboard') }}">Dashboard</a> 
+       @else
+        <a class="link" href="{{ route('login') }}">Iniciar Sesión</a> |
+        @if (Route::has('register'))
+        <a class="link" href="{{ route('register') }}">Registrarse</a>
+        @endif
+       @endauth
+      @endif
 </body>
 </html>

@@ -14,7 +14,7 @@ body {/*
      margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('fondo.png') no-repeat center center fixed;
+    background: url('fondo2.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-align: center;
@@ -24,45 +24,113 @@ body {/*
     justify-content: center;
     backdrop-filter: brightness(0.8);
 }
-.contenedor-login {
-    width: 400px;
-    margin: 50px auto;
-    background: #071739;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/*registro*/
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
+.formulario {
+    background: #071739;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.campo {
+    margin-bottom: 1.5rem;
+}
+
 label {
     display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
     color: white;
-    margin-bottom: 5px;
-    font-weight: bold;
-    text-align: left;
 }
-.grupo-f{
-    margin-bottom: 15px;
-    text-align: left;
-}
-.form-control {
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 0.75rem;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    transition: border-color 0.3s;
 }
-.form-control:focus{
-    border-color: #CDD5D8;
-    outline: none; 
+
+input:focus {
+    border-color: #6a11cb;
+    outline: none;
 }
-.btn {
-    padding: 10px 100px;
-    border: none;
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
+
+.error {
+    color: #e63946;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.enlace {
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    color: #e3c39d;
+    text-decoration: underline;
+}
+
+.boton {
     background-color: #4b6382;
     color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+.boton:hover {
+    background-color: #520dc2;
+}
+/*login*/
+.mensaje-sesion {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.campo-checkbox {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.campo-checkbox input {
+    margin-right: 0.5rem;
+}
+.acciones.doble {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 /*landing*/
 .titulo {
     font-size: 3.5em;
@@ -83,4 +151,4 @@ link:hover {
     color: #ffffff;
     text-decoration: underline;
 }
-
+/*dashboard*/
